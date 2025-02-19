@@ -6,12 +6,16 @@ from src.menubar.about_menu import AboutMenu
 
 
 class MenuBar(QMenuBar):
-    def __init__(self):
+    def __init__(self,text_edit):
         super().__init__()
-        # Menu Declarations
-        self.file_menu = FileMenu(parent=self)
-        self.edit_menu = EditMenu(parent=self)
-        self.format_menu = FormatMenu(parent=self)
+
+        # TextEdit reference
+        self.text_edit = text_edit
+
+        # Menu declarations
+        self.file_menu = FileMenu(parent=self,text_edit=self.text_edit)
+        self.edit_menu = EditMenu(parent=self,text_edit=self.text_edit)
+        self.format_menu = FormatMenu(parent=self,text_edit=self.text_edit)
         self.about_menu = AboutMenu(parent=self)
 
         # Add menus

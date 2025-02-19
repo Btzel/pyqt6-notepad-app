@@ -5,6 +5,7 @@ from PyQt6.QtCore import QSize
 class ToolBar(QToolBar):
     def __init__(self,file_menu,edit_menu,format_menu):
         super().__init__()
+        self.setMovable(False)
         # Menu references
         self.file_menu = file_menu
         self.edit_menu = edit_menu
